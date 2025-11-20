@@ -1,0 +1,13 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AASHRO\AtBackup\:
+    resource: '../Classes/*'
+
+  AASHRO\AtBackup\Controller\BackupController:
+    arguments:
+      $moduleTemplateFactory: '@TYPO3\CMS\Backend\Template\ModuleTemplateFactory'

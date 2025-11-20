@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:at_backup/Resources/Private/Language/locallang.xlf" date="2025-06-02T07:58:47Z" product-name="at_backup">
+		<header/>
+		<body>
+			<trans-unit id="tx_atbackup_domain_model_backup" resname="tx_atbackup_domain_model_backup">
+				<source>Backup</source>
+			</trans-unit>
+			<trans-unit id="tx_atbackup_domain_model_backup.description" resname="tx_atbackup_domain_model_backup.description">
+				<source>Backup History</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_doc">
+				<source>DOC</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_msgdark">
+				<source>Click to switch Dark Mode</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_msglight">
+				<source>Click to switch Light Mode</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_heading">
+				<source>TYPO3 Project Backup</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_description">
+				<source>This will backup your TYPO3 project. Store it in folder name 'at-backup' created at project root.</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_filename">
+				<source>Filename</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_size">
+				<source>Size</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_action">
+				<source>Actions</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_download">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_delete">
+				<source>Delete</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_nofound">
+				<source>No backups found.</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_copyright">
+				<source>Aashro Tech. All rights reserved. </source>
+			</trans-unit>
+			<trans-unit id="tx_backup_server_time">
+				<source>Server time</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_server_time_descr">
+				<source>All dates and times in this extension are measured according to the server's time.</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_server_current_time">
+				<source>Current server time is</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_popmsg">
+				<source>Are you sure you want to delete this backup?</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_msgdelete">
+				<source>Yes, Delete</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_msgcancle">
+				<source>Cancel</source>
+			</trans-unit>
+			<trans-unit id="loader.message">
+				<source><![CDATA[Please wait while the backup is running.<br>⚠️ Do not press any keys, close, or switch this module.]]></source>
+			</trans-unit>
+			<trans-unit id="tx_backup_attention">
+				<source>⚠️ Attention</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_attentionmessage">
+				<source><![CDATA[This extension is supported for project size up to <strong>3GB</strong> in size. Please ensure your data stays within this limit for optimal performance.]]></source>
+			</trans-unit>
+			<trans-unit id="tx_backup_notshowagain">
+				<source>Don't show this again</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_limitbutton">
+				<source>Got it!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

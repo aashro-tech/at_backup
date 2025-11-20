@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:at_backup/Resources/Private/Language/locallang_db.xlf" date="2025-06-02T07:58:47Z" product-name="at_backup">
+		<header/>
+		<body>
+			<trans-unit id="tx_atbackup_domain_model_backup" resname="tx_atbackup_domain_model_backup">
+				<source>Backup</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

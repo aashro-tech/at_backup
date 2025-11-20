@@ -1,0 +1,35 @@
+{
+    "name": "aashro/at-backup",
+    "type": "typo3-cms-extension",
+    "description": "Create backup of your whole project in single click.",
+    "authors": [
+        {
+            "name": "Aashro Tech",
+            "email": "info@aashro.com",
+            "role": "Developer",
+            "homepage": "http://www.aashro.com/"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11 || ^12 || ^13"
+    },
+    "autoload": {
+        "psr-4": {
+            "AASHRO\\AtBackup\\": "Classes"
+        }
+    },
+    "replace": {
+        "typo3-ter/at-backup": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "extra": {
+        "typo3/cms": {
+            "web-dir": ".Build/public",
+            "extension-key": "at_backup"
+        }
+    }
+}

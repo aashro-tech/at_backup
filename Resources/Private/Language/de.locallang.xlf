@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="at_backup">
+		<header/>
+
+		<body>			 
+			<trans-unit id="tx_atbackup_domain_model_backup" resname="tx_atbackup_domain_model_backup">
+				<target state="translated">Sicherung</target>
+			</trans-unit>
+			<trans-unit id="tx_atbackup_domain_model_backup.description" resname="tx_atbackup_domain_model_backup.description">
+				<target state="translated">Sicherungsverlauf</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_doc">
+				<target state="translated">DOC</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_msgdark">
+				<target state="translated">Klicken Sie hier, um in den Dunkelmodus zu wechseln</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_msglight">
+				<target state="translated">Klicken, um den Lichtmodus zu wechseln</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_heading">
+				<target state="translated">TYPO3 Projekt Backup</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_description">
+				<target state="translated">Dadurch wird Ihr TYPO3-Projekt gesichert. Speichern Sie es im Ordner „at-backup“, der im Stammverzeichnis des Projekts erstellt wurde.</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_filename">
+				<target state="translated">Dateiname</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_size">
+				<target state="translated">Größe</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_date">
+				<target state="translated">Datum</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_action">
+				<target state="translated">Aktionen</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_download">
+				<target state="translated">Herunterladen</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_delete">
+				<target state="translated">Löschen</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_nofound">
+				<target state="translated">Keine Sicherungen gefunden.</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_copyright">
+				<target state="translated">Aashro Tech. Alle Rechte vorbehalten. </target>
+			</trans-unit>
+			<trans-unit id="tx_backup_server_time">
+				<target>Serverzeit</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_server_time_descr">
+				<target>Alle Datums- und Zeitangaben in dieser Erweiterung werden anhand der Serverzeit gemessen.</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_server_current_time">
+				<target>Die aktuelle Serverzeit ist</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_popmsg">
+				<target state="translated">Möchten Sie diese Sicherung wirklich löschen?</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_msgdelete">
+				<target state="translated">Ja, löschen</target>
+			</trans-unit>
+			<trans-unit id="tx_backup_msgcancle">
+				<target state="translated">Stornieren</target>
+			</trans-unit>
+			<trans-unit id="loader.message">
+				<target state="translated"><![CDATA[Bitte warten Sie, während die Sicherung läuft.<br>⚠️ Drücken Sie keine Tasten, schließen oder wechseln Sie dieses Modul nicht.]]></target>
+			</trans-unit>
+			<trans-unit id="tx_backup_attention">
+				<source>⚠️ Aufmerksamkeit</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_attentionmessage">
+				<source><![CDATA[Diese Erweiterung wird für Projekte mit einer Größe von bis zu <strong>3GB</strong> unterstützt. Bitte stellen Sie sicher, dass Ihre Daten innerhalb dieses Grenzwerts bleiben, um eine optimale Leistung zu gewährleisten.]]></source>
+			</trans-unit>
+			<trans-unit id="tx_backup_notshowagain">
+				<source>Dies nicht mehr anzeigen</source>
+			</trans-unit>
+			<trans-unit id="tx_backup_limitbutton">
+				<source>Habe es!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

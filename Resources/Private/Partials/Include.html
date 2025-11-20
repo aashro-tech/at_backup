@@ -1,0 +1,129 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:be.pageRenderer 
+        pageTitle="Backup"
+        includeCssFiles="{
+            0: 'EXT:at_backup/Resources/Public/Css/jquery.dataTables.min.css',
+            1: 'EXT:at_backup/Resources/Public/Css/style.css'
+        }"
+        includeJsFiles="{
+            0: 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js',
+            1: 'EXT:at_backup/Resources/Public/JavaScript/jquery.dataTables.min.js',
+            2: 'EXT:at_backup/Resources/Public/JavaScript/DatatableInclude.js',
+            3: 'EXT:at_backup/Resources/Public/JavaScript/Script.js'
+        }"
+    />
+    <f:be.container pageTitle="atbackup">
+        <div class="at-backup v11">
+            <div class="header-con">
+                <div class="logo">
+                    <a href="https://www.aashro.com/" target="_blank">
+                        <f:image src="EXT:at_backup/Resources/Public/Icons/aashrotech_dark.svg" class="blakc-logo" alt="logo" />
+                        <f:image src="EXT:at_backup/Resources/Public/Icons/aashrotech_white.svg" class="white-logo" alt="logo" />
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="www.aashro.com/product/extensions/at-backup/documentation" target="_blank"><f:translate key="tx_backup_doc" /></a></li>
+                    </ul>
+                    <div class="btn-switch">
+                        <button type="button" class="toggle-mode" id="toggleButton" data-light-label="{f:translate(key: 'tx_backup_msglight')}" data-dark-label="{f:translate(key: 'tx_backup_msgdark')}">🌓 <f:translate key="tx_backup_msgdark" /></button>
+                    </div>
+                </div>                
+            </div>
+            <br>
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button type="button" class="tab-btn active" data-tab="tab-backup"><f:translate key="tx_atbackup_domain_model_backup" /></button>
+                    <button type="button" class="tab-btn" data-tab="tab-history"><f:translate key="tx_atbackup_domain_model_backup.description" /></button>
+                </div>
+                <div id="tab-backup" class="tab-content active">
+                    <h1><f:translate key="tx_backup_heading" /></h1>
+                    <f:form action="runBackup" method="post">
+                        <p><f:translate key="tx_backup_description" /></p>
+                        <f:form.submit value="Run Backup Now" class="backup-button"/>
+                    </f:form>
+                </div>
+                <div id="tab-history" class="tab-content">
+                    <h1><f:translate key="tx_atbackup_domain_model_backup.description" /></h1>
+                    <div class="flash-messages">
+                        <f:flashMessages />
+                    </div>
+                    <f:if condition="{backups}">
+                        <f:then>
+                            <div class="table-responsive">
+                                <table class="table at-datatable" id="myexample">
+                                    <thead>
+                                        <tr>
+                                            <th><f:translate key="tx_backup_filename" /></th>
+                                            <th><f:translate key="tx_backup_size" /></th>
+                                            <th><f:translate key="tx_backup_date" /></th>
+                                            <th><f:translate key="tx_backup_action" /></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <f:for each="{backups}" as="backup">
+                                            <tr>
+                                                <td>{backup.name}</td>
+                                                <td><f:format.bytes>{backup.size}</f:format.bytes></td>
+                                                <td><f:format.date format="Y-m-d H:i:s">{backup.time}</f:format.date></td>
+                                                <td>
+                                                    <f:link.action action="downloadBackup" arguments="{file: backup.name}"><button class="btn btn-success"><f:translate key="tx_backup_download" /></button></f:link.action>
+                                                    <a href="#" class="delete btn btn-danger open-delete-modal" data-delete-url="{f:uri.action(action: 'deleteBackup', arguments: {file: backup.name})}"><f:translate key="tx_backup_delete" /></a>
+                                                </td>
+                                            </tr>
+                                        </f:for>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <p><f:translate key="tx_backup_nofound" /></p>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+            <br>
+            <div class="footer">
+                <p>© <span id="copyright"></span> <f:translate key="tx_backup_copyright" /></p>
+                <div class="server-time-box">
+                    <h3 class="server-time-heading">📅 <f:translate key="tx_backup_server_time" /></h3>
+                    <p class="server-time-info">
+                        <f:format.raw><f:translate key="tx_backup_server_time_descr" /></f:format.raw>
+                    </p>
+                    <p class="server-time-current">
+                        <strong><f:translate key="tx_backup_server_current_time" /></strong>: <f:sanitize.html>{dateFormat}</f:sanitize.html>
+                    </p>
+                </div>
+            </div>
+
+            <f:comment>      <!-- Loader -->        </f:comment>
+            <div class="loader-overlay" style="display: none;">
+                <div class="loader-content">
+                    <p class="loader-message"><f:format.raw><f:translate key="loader.message" /></f:format.raw></p>
+                    <div class="spinner"></div>
+                </div>
+            </div>
+
+
+            <f:comment>      <!-- Modal -->      </f:comment>
+            <div class="modal-overlay" id="deleteModal">
+                <div class="modal-box">
+                    <p><f:translate key="tx_backup_popmsg" /></p>
+                    <div class="modal-actions">
+                        <a href="#" id="confirmDeleteBtn" class="btn btn-danger"><f:translate key="tx_backup_msgdelete" /></a>
+                        <button class="btn btn-secondary cancel-delete-modal"><f:translate key="tx_backup_msgcancle" /></button>
+                    </div>
+                </div>
+            </div>
+
+            <f:comment>      <!-- Modal Warning of size -->      </f:comment>
+            <div id="sizeLimitModal" class="modal">
+                <div class="modal-content">
+                    <h2><f:translate key="tx_backup_attention" /></h2>
+                    <p><f:format.raw><f:translate key="tx_backup_attentionmessage" /></f:format.raw></p>
+                    <label><input type="checkbox" id="dontShowAgain"> <f:translate key="tx_backup_notshowagain" /></label>
+                    <button id="closeModal"><f:translate key="tx_backup_limitbutton" /></button>
+                </div>
+            </div>
+        </div>
+    </f:be.container>
